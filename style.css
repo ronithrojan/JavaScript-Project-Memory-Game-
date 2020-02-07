@@ -1,5 +1,13 @@
+body {
+  margin: 0px;
+}
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .container {
-  width: 200px;
+  width: 33%;
   height: 260px;
   position: relative;
   border: 1px solid #ccc;
@@ -38,7 +46,10 @@
   backface-visibility: hidden;
 }
 .card .front {
-  background: red;
+  background-image: url(./assets/Cheers-tv-logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .card .back {
   background: blue;
@@ -52,4 +63,10 @@
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+.front img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
 }

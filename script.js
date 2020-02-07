@@ -1,17 +1,66 @@
+let array = [
+  { image: "./assets/beer.jpg", id: "beer" },
+  { image: "./assets/pretzels.jpg", id: "beer" },
+  {
+    image: "assets/Cheese.jpeg",
+    id: "cheese"
+  },
+  {
+    image: "assets/Wine.jpeg",
+    id: "cheese"
+  },
+  {
+    image: "assets/Gin T.jpeg",
+    id: "gin"
+  },
+  {
+    image: "assets/Tonic.jpeg",
+    id: "gin"
+  },
+  {
+    image: "assets/jdaniels.jpg",
+    id: "jack"
+  },
+  {
+    image: "assets/coke.jpg",
+    id: "jack"
+  },
+  {
+    image: "assets/lime.jpg",
+    id: "lime"
+  },
+  {
+    image: "assets/tequila.jpeg",
+    id: "lime"
+  },
+  {
+    image: "assets/coffee.jpg",
+    id: "coffee"
+  },
+  {
+    image: "assets/download.jpeg",
+    id: "coffee"
+  }
+];
+
 /* <section class="container">
   <div class="card">
     <div class="front">1</div>
     <div class="back">2</div>
   </div>
 </section>; */
+
 let gameboard = document.querySelector(".gameboard");
 //create a loop to make the other cards
-for (let i = 0; i < 12; i++) {
+for (let item of array) {
   let cardContainer = document.createElement("section");
   cardContainer.classList.add("container");
   let card = document.createElement("div");
   card.classList.add("card");
+  let frontImage = document.createElement("img");
+  frontImage.setAttribute("src", item.image);
   let front = document.createElement("div");
+  front.append(frontImage);
   front.classList.add("front");
   let back = document.createElement("div");
   back.classList.add("back");
