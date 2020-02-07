@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  width: 33%;
+  width: calc(calc(100% / 3) - 2px);
   height: 260px;
   position: relative;
   border: 1px solid #ccc;
