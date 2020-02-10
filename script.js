@@ -1,4 +1,4 @@
-let array = [
+let cardArray = [
   { image: "./assets/beer.jpg", id: "beer" },
   { image: "./assets/pretzels.jpg", id: "beer" },
   { image: "assets/Cheese.jpeg", id: "cheese" },
@@ -40,6 +40,22 @@ let array = [
   }
 ];
 
+function shuffle(array) {
+  let currentIndex = cardArray.length,
+    temporaryValue,
+    randomIndex;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+
+shuffle(cardArray);
+
 /* <section class="container">
   <div class="card">
     <div class="front">1</div>
@@ -49,7 +65,7 @@ let array = [
 
 let gameboard = document.querySelector(".gameboard");
 //create a loop to make the other cards
-for (let item of array) {
+for (let item of cardArray) {
   let cardContainer = document.createElement("section");
   cardContainer.classList.add("container");
   let card = document.createElement("div");
@@ -96,15 +112,18 @@ function clicked(e) {
         console.log("issa match");
         clickedCards = [];
       } else {
-        for (let card of clickedCards) {
-          card.classList.remove("flipped");
-        }
-        clickedCards = [];
-        timeout();
+        setTimeout(() => {
+          for (let card of clickedCards) {
+            card.classList.remove("flipped");
+          }
+          clickedCards = [];
+          timeout();
+        }, 1000);
       }
     }
   }
 }
+
 //set timer to stop after 6 matches
 //
 let time = 60;

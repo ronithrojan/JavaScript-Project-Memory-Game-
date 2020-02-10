@@ -1,20 +1,29 @@
 body {
   margin: 0px;
+  background-image: url(./assets/bar.jpg);
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .gameboard {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container {
-  width: calc(calc(100% / 3) - 2px);
-  height: 260px;
+  width: 297px;
+  height: 239px;
+  /* width: calc(calc(100% / 3) - 2px);
+  /* height: 260px; mobile */
   position: relative;
-  border: 1px solid #ccc;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
   -o-perspective: 800px;
   perspective: 800px;
+  border-radius: 25px;
+  margin: 10px;
 }
 .card {
   width: 100%;
@@ -29,6 +38,7 @@ body {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform-origin: 50% 50%;
+  background-size: contain;
 }
 .card div {
   display: block;
@@ -69,4 +79,15 @@ body {
   object-fit: contain;
   height: 100%;
   width: 100%;
+}
+
+a {
+  border-radius: 25px;
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  background-color: black;
+
+  margin: 10px;
 }
