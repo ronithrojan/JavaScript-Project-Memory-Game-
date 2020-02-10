@@ -4,14 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+    href=“https://fonts.googleapis.com/css?family=Roboto+Condensed|Russo+One&display=swap”
+    rel=“stylesheet”>
     <link rel="stylesheet" href="style.css" />
 
     <title>Memory Game</title>
   </head>
-  <header></header>
+  <header>
+    <nav class="navbar">
+      <h3>
+        <span class="logo">Better Together!</span>
+      </h3>
+      <ul class="main-nav">
+        <p id="start">Start</p>
+        <li><a href="#" class="nav-links">Restart</a></li>
+        <li>
+          <div class="countdown">Time: <span id="time">60</span></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <a href="url">Start Game</a>
-    <p id="time">60</p>
     <section class="gameboard"></section>
 
     <script src="script.js"></script>

@@ -1,7 +1,10 @@
+/* Class Styles */
 body {
   margin: 0px;
+  font-family: ‘Roboto Condensed’, sans-serif;
   background-image: url(./assets/bar.jpg);
   display: flex;
+  display: inline;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,6 +13,39 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.main-nav {
+  display: flex;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin-bottom: 40px;
+  justify-content: space-around;
+  align-content: flex-end;
+}
+
+.countdown {
+  border-radius: 25px;
+  font-size: 28px;
+  text-decoration: none;
+  margin-bottom: 40px;
+  color: white;
+  padding: 20px;
+  background-color: black;
+  margin: 5px;
+}
+
+.logo {
+  font-size: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 50px;
+  padding: 10px;
+  margin: 25px;
 }
 
 .container {
@@ -81,13 +117,20 @@ body {
   width: 100%;
 }
 
-a {
+a,
+p {
   border-radius: 25px;
   font-size: 28px;
   text-decoration: none;
   color: white;
-  padding: 10px;
+  padding: 20px;
   background-color: black;
+  margin: 5px;
+}
 
-  margin: 10px;
+@media only screen and (max-width: 768px) {
+  .container {
+    width: calc(calc(100% / 3) - 2px);
+    height: 260px;
+  }
 }

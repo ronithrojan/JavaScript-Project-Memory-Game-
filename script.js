@@ -127,6 +127,7 @@ function clicked(e) {
 //set timer to stop after 6 matches
 //
 let time = 60;
+
 function timeout() {
   timer = setTimeout(function() {
     //conditions
@@ -140,4 +141,11 @@ function timeout() {
   }, 1000);
 }
 
-timeout();
+// let countdown = document.querySelector(".countdown");
+let clock = document.body;
+clock.addEventListener("click", function(e) {
+  console.log(e);
+  if (e.target.id === "start") {
+    timeout();
+  }
+});
