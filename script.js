@@ -75,6 +75,7 @@ for (let item of array) {
 }
 
 let clickedCards = [];
+let matches = 0;
 
 //add event listener to gameboard to listen for clicks
 gameboard.addEventListener("click", clicked);
@@ -91,6 +92,7 @@ function clicked(e) {
         clickedCards[0].getAttribute("data-card-id") ===
         clickedCards[1].getAttribute("data-card-id")
       ) {
+        matches++;
         console.log("issa match");
         clickedCards = [];
       } else {
@@ -98,21 +100,25 @@ function clicked(e) {
           card.classList.remove("flipped");
         }
         clickedCards = [];
+        timeout();
       }
     }
   }
 }
+//set timer to stop after 6 matches
+//
+let time = 60;
+function timeout() {
+  timer = setTimeout(function() {
+    //conditions
+    if (time > 0 && matches < 6) {
+      time--;
+      document.querySelector("#time").innerText = time;
+    } else if (matches === 6) {
+      clearTimeout(timer);
+    }
+    timeout();
+  }, 1000);
+}
 
-//make a for loop to revert back to card's back when there's not a match
-
-// const cards = document.querySelectorAll(‘.memory-card’);
-// + let hasFlippedCard = false;
-// + let firstCard, secondCard;
-//   function flipCard() {
-// -   this.classList.toggle(‘flip’);
-// +   this.classList.add(‘flip’);
-// +   if (!hasFlippedCard) {
-// +     hasFlippedCard = true;
-// +     firstCard = this;
-// +   }
-//   }
+timeout();
